@@ -5,32 +5,43 @@ function Book(title, author, numOfPages) {
   this.author = author;
   this.numOfPages = numOfPages;
 
-  this.info = function () {
+  this.info = function() {
     return `${this.title} by ${this.author}, ${this.numOfPages} pages, not read yet`;
   };
 }
 
-newBook = new Book('Things fall apart', 'Chinua Achebe', 25);
-
 function addBookToLibrary(obj) {
   myLibrary.push(obj);
+  console.log(myLibrary);
   return myLibrary;
 }
-console.log(addBookToLibrary(newBook));
 
-function templates{
-  myLibrary.map(book =>
-    `<tr>
+const template = () =>
+  myLibrary
+    .map(
+      book =>
+        `<tr>
     <td>${book.title}</td>
     <td>${book.author}</td>
     <td>${book.numOfPages}</td>
   </tr>`
-  ).join('');
-}
+    )
+    .join('');
 
 const render = (temp, node) => {
   node.innerHTML = temp;
 };
 
+const form = document.querySelector('#myform');
+const btn = form.querySelector('#submit');
 
+btn.addEventListener('click', function(e) {
+  e.preventDefault();
+  const title = form.querySelector('[name="title"]').value;
+  const author = form.querySelector('[name="author"]').value;
+  const numOfPages = form.querySelector('[name="pages"]').value;
 
+  newBook = new Book(title, author, numOfPages);
+  addBookToLibrary(newBook);
+  render(template(), document.querySelector('#myTable'));
+});

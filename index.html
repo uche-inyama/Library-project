@@ -1,43 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Document</title>
-</head>
+  <body>
+    <h1>MICROVERSE LIBRARY</h1>
 
-<body>
-  <h1> MICROVERSE LIBRARY </h1>
+    <form id="myform">
+      <div class="container">
+        <label for="title"><b>Book Title</b></label>
+        <input type="text" placeholder="Enter Title" name="title" required />
 
-  <table style="width:50%">
-    <tr>
-      <th>Title</th>
-      <th>Author</th>
-      <th>No.Pages</th>
-      <th>Read?</th>
-    </tr>
+        <label id="author" for="author"><b>Author</b></label>
+        <input type="text" placeholder="Enter Author" name="author" required />
 
-  </table>
+        <label id="pages" for="pages"><b>No.of Pages</b></label>
+        <input
+          type="text"
+          placeholder="Enter No.of pages"
+          name="pages"
+          required
+        />
 
-  <form>
+        <button id="submit" type="submit">Save</button>
+      </div>
+    </form>
 
-    <div class="container">
-      <label for="title"><b>Book Title</b></label>
-      <input id="title" type="text" placeholder="Enter Title" name="uname" required>
-
-      <label id="author" for="author"><b>Author</b></label>
-      <input type="text" placeholder="Enter Author" name="author" required>
-
-      <label id="pages" for="pages"><b>No.of Pages</b></label>
-      <input type="text" placeholder="Enter No.of pages" name="pages" required>
-
-      <button id="submit" type="submit">Save</button>
-
-    </div>
-
-  </form>
-</body>
-
+    <table id="myTable" style="width:50%">
+      <!-- <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>No.Pages</th>
+        <th>Read?</th>
+      </tr> -->
+    </table>
+    <script src="./asset/index.js"></script>
+  </body>
 </html>
