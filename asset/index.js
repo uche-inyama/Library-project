@@ -34,7 +34,7 @@ const render = (temp, node) => {
 
 const form = document.querySelector('#myform');
 const btn = form.querySelector('#submit');
-
+const myFormBtn = document.querySelector('#myform');
 form.hidden = true;
 
 btn.addEventListener('click', function(e) {
@@ -46,4 +46,10 @@ btn.addEventListener('click', function(e) {
   newBook = new Book(title, author, numOfPages);
   addBookToLibrary(newBook);
   render(template(), document.querySelector('#myTable'));
+});
+
+newBookBtn.addEventListener('click', function(e) {
+  e.preventDefault();
+  form.hidden = false;
+  newBookBtn.hidden = true;
 });
