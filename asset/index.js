@@ -16,14 +16,21 @@ function addBookToLibrary(obj) {
   return myLibrary;
 }
 
+function removeBookFromLibrary(index) {
+  myLibrary.splice(index, 1);
+  return myLibrary;
+}
+
 const template = () =>
   myLibrary
     .map(
-      book =>
+      (book, index) =>
         `<tr>
-    <td>${book.title}</td>
-    <td>${book.author}</td>
-    <td>${book.numOfPages}</td>
+      <td>${book.title}</td>
+      <td>${book.author}</td>
+      <td>${book.numOfPages}</td>
+      <td><button class ="deletebtn" data-id = ${index}>Delete</button></td>
+
   </tr>`
     )
     .join('');
@@ -35,6 +42,7 @@ const render = (temp, node) => {
 const form = document.querySelector('#myform');
 const btn = form.querySelector('#submit');
 const myFormBtn = document.querySelector('#myform');
+const table = document.querySelector('#myTable');
 form.hidden = true;
 
 btn.addEventListener('click', function(e) {
@@ -52,4 +60,13 @@ newBookBtn.addEventListener('click', function(e) {
   e.preventDefault();
   form.hidden = false;
   newBookBtn.hidden = true;
+});
+
+table.addEventListener('click', function(e) {
+  const id = parseInt(e.target.dataset.id);
+  if (e.target.matches('.deletebtn')) {
+    removeBookFromLibrary(id, 1);
+    render(template(), document.querySelector('#myTable'));
+  }
+  console.log(e.target);
 });
