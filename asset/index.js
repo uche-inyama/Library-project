@@ -1,3 +1,5 @@
+/* eslint-env browser */
+
 const myLibrary = [];
 
 function Book(title, author, numOfPages) {
@@ -5,14 +7,13 @@ function Book(title, author, numOfPages) {
   this.author = author;
   this.numOfPages = numOfPages;
 
-  this.info = function() {
+  this.info = function info() {
     return `${this.title} by ${this.author}, ${this.numOfPages} pages, not read yet`;
   };
 }
 
 function addBookToLibrary(obj) {
   myLibrary.push(obj);
-  console.log(myLibrary);
   return myLibrary;
 }
 
@@ -30,7 +31,6 @@ const template = () =>
       <td>${book.author}</td>
       <td>${book.numOfPages}</td>
       <td><button class ="deletebtn" data-id = ${index}>Delete</button></td>
-
   </tr>`
     )
     .join('');
@@ -41,8 +41,9 @@ const render = (temp, node) => {
 
 const form = document.querySelector('#myform');
 const btn = form.querySelector('#submit');
-const myFormBtn = document.querySelector('#myform');
 const table = document.querySelector('#myTable');
+const myformBtn = document.querySelector('#myFormButton');
+const newBookBtn = myformBtn.querySelector('#newBookBtn');
 form.hidden = true;
 
 btn.addEventListener('click', function(e) {
