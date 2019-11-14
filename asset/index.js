@@ -35,6 +35,8 @@ const render = (temp, node) => {
 const form = document.querySelector('#myform');
 const btn = form.querySelector('#submit');
 
+form.hidden = true;
+
 btn.addEventListener('click', function(e) {
   e.preventDefault();
   const title = form.querySelector('[name="title"]').value;
