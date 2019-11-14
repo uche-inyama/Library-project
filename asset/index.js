@@ -2,13 +2,14 @@
 
 const myLibrary = [];
 
-function Book(title, author, numOfPages) {
+function Book(title, author, numOfPages, read) {
   this.title = title;
   this.author = author;
   this.numOfPages = numOfPages;
+  this.read = read;
 
   this.info = function info() {
-    return `${this.title} by ${this.author}, ${this.numOfPages} pages, not read yet`;
+    return `${this.title} by ${this.author}, ${this.numOfPages} pages, ${this.read} `;
   };
 }
 
@@ -30,6 +31,11 @@ const template = () =>
       <td>${book.title}</td>
       <td>${book.author}</td>
       <td>${book.numOfPages}</td>
+      <td><b>Read?</b> 
+      <select id="select1"> 
+          <option value="Not Read">Not Read</option> 
+          <option value="Read">Read</option> 
+      </select></td>
       <td><button class ="deletebtn" data-id = ${index}>Delete</button></td>
   </tr>`
     )
@@ -46,7 +52,7 @@ const myformBtn = document.querySelector('#myFormButton');
 const newBookBtn = myformBtn.querySelector('#newBookBtn');
 form.hidden = true;
 
-btn.addEventListener('click', function(e) {
+btn.addEventListener('click', function (e) {
   e.preventDefault();
   const title = form.querySelector('[name="title"]').value;
   const author = form.querySelector('[name="author"]').value;
@@ -57,13 +63,13 @@ btn.addEventListener('click', function(e) {
   render(template(), document.querySelector('#myTable'));
 });
 
-newBookBtn.addEventListener('click', function(e) {
+newBookBtn.addEventListener('click', function (e) {
   e.preventDefault();
   form.hidden = false;
   newBookBtn.hidden = true;
 });
 
-table.addEventListener('click', function(e) {
+table.addEventListener('click', function (e) {
   const id = parseInt(e.target.dataset.id);
   if (e.target.matches('.deletebtn')) {
     removeBookFromLibrary(id, 1);
