@@ -7,7 +7,6 @@ const myFormBtn = document.querySelector('#mybutton');
 const tbody = document.querySelector('#tbody');
 const tableRow = tbody.querySelector('#tableRow');
 
-<<<<<<< HEAD
 function Book(title, author, numOfPages, status = unread, id = null) {
   this.title = title;
   this.author = author;
@@ -17,18 +16,6 @@ function Book(title, author, numOfPages, status = unread, id = null) {
 
   this.info = function() {
     return `${this.title} by ${this.author}, ${numOfPages} pages, not read yet`;
-=======
-const myLibrary = [];
-
-function Book(title, author, numOfPages, read) {
-  this.title = title;
-  this.author = author;
-  this.numOfPages = numOfPages;
-  this.read = read;
-
-  this.info = function info() {
-    return `${this.title} by ${this.author}, ${this.numOfPages} pages, ${this.read} `;
->>>>>>> 903a020598b139eea9fe3018a5429a76e30edcc1
   };
 
   this.changeStatus = function() {
