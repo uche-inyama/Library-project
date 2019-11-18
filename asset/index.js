@@ -1,3 +1,5 @@
+/* global document */
+
 const unread = 'Unread';
 const read = 'Read';
 const libraryKey = 'books';
@@ -5,7 +7,7 @@ const form = document.querySelector('#myForm');
 const btn = form.querySelector('.btn');
 const myFormBtn = document.querySelector('#mybutton');
 const tbody = document.querySelector('#tbody');
-const tableRow = tbody.querySelector('#tableRow');
+// const tableRow = tbody.querySelector('#tableRow');
 
 function Book(title, author, numOfPages, status = unread, id = null) {
   this.title = title;
@@ -14,7 +16,7 @@ function Book(title, author, numOfPages, status = unread, id = null) {
   this.status = status;
   this.id = id || uuidv4();
 
-  this.info = function() {
+  this.info = function info() {
     return `${this.title} by ${this.author}, ${numOfPages} pages, not read yet`;
   };
 
@@ -36,9 +38,7 @@ Book.prototype.parseJson = function(obj) {
 
 const getLibrary = () => {
   let library = window.localStorage.getItem(libraryKey);
-  console.log(library);
   if (!library) {
-    console.log('library does not exisit');
     library = [];
     window.localStorage.setItem(libraryKey, JSON.stringify(library));
   }
@@ -46,16 +46,16 @@ const getLibrary = () => {
   return library;
 };
 
-const addBookToLibrary = book => {
+function addBookToLibrary(book) {
   const library = getLibrary();
   library.push(book);
   window.localStorage.setItem(libraryKey, JSON.stringify(library));
-};
+}
 
-const removeBookFromLibrary = id => {
+function removeBookFromLibrary(id) {
   const library = getLibrary().filter(book => book.id !== id);
   window.localStorage.setItem(libraryKey, JSON.stringify(library));
-};
+}
 
 const template = () =>
   getLibrary()
