@@ -1,0 +1,149 @@
+/* @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap'); */
+
+html {
+  font-family: 'helvetica neue', helvetica, arial, sans-serif;
+}
+
+thead th {
+  /* font-family: 'Rock Salt', cursive; */
+  font-weight: 400;
+}
+
+th {
+  letter-spacing: 2px;
+}
+
+td {
+  letter-spacing: 1px;
+}
+
+tbody td,
+tr th {
+  text-align: center;
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  padding: 10px 10px;
+}
+
+th,
+td {
+  padding: 10px;
+}
+header {
+  height: 6vh;
+  border: solid 0.5px bisque;
+}
+
+.wrapper {
+  position: absolute;
+  top: 100px;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+label {
+  margin-bottom: 0;
+}
+
+#myForm {
+  padding: 10px 10px 15px 10px;
+  border: solid 0.5px bisque;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
+#mybutton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 15px;
+}
+
+.bookList {
+  border: solid 0.5px bisque;
+  padding: 10px;
+}
+
+.field {
+  margin-bottom: 20px;
+  border: solid 1px black;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #ff33cc;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #e495e4;
+}
+
+input[type='text'],
+input[type='number'] {
+  padding: 5px;
+  border: 2px solid #ccc;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+input[type='submit'] {
+  padding: 5px 15px;
+  background: #ccc;
+  border: 0 none;
+  cursor: pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  width: 215px;
+}
+
+input[type='button'] {
+  padding: 5px 15px;
+  background: #ccc;
+  border: 0 none;
+  cursor: pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.navigation {
+  display: flex;
+  font-family: 'Rock Salt', cursive;
+  height: 100%;
+  padding: 0 20px;
+  list-style: none;
+  font-weight: 500;
+  align-items: center;
+}
+
+li:nth-child(n + 2) {
+  text-align: center;
+  color: #000;
+}
+nav {
+  height: 100%;
+}
+
+.nav_item_1 {
+  text-transform: uppercase;
+  cursor: pointer;
+  flex: 5 1 100px;
+  padding-left: 200px;
+}
+
+.nav_item_2,
+.nav_item_3,
+.nav_item_4 {
+  cursor: pointer;
+  flex: 1 1 50px;
+}
+
+.nav_item_1 a,
+.nav_item_2 a,
+.nav_item_3 a,
+.nav_item_4 a {
+  text-decoration: none;
+  color: black;
+}

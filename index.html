@@ -4,43 +4,82 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Rock+Salt"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="asset/reset.css" rel="stylesheet" type="text/css" />
+    <link href="asset/style.css" rel="stylesheet" type="text/css" />
     <title>Document</title>
   </head>
-
   <body>
-    <h1>MICROVERSE LIBRARY</h1>
-
-    <form id="myform">
-      <div class="container">
-        <label for="title"><b>Book Title</b></label>
-        <input type="text" placeholder="Enter Title" name="title" required />
-
-        <label id="author" for="author"><b>Author</b></label>
-        <input type="text" placeholder="Enter Author" name="author" required />
-
-        <label id="pages" for="pages"><b>No.of Pages</b></label>
-        <input
-          type="text"
-          placeholder="Enter No.of pages"
-          name="pages"
-          required
-        />
-
-        <button id="submit" type="submit">Save</button>
+    <header>
+      <nav>
+        <ul class="navigation">
+          <li class="item nav_item_1"><a href="#">logo</a></li>
+          <li class="item nav_item_2"><a href="#">Sign up</a></li>
+          <li class="item nav_item_3"><a href="#">About</a></li>
+          <li class="item nav_item_4"><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="wrapper container">
+        <div class="form-container">
+          <form id="myForm">
+            <label>Title:</label><br />
+            <input
+              class="field"
+              type="text"
+              name="title"
+              value=""
+              placeholder="Enter the title"
+            /><br />
+            <label>Author:</label><br />
+            <input
+              class="field"
+              type="text"
+              name="author"
+              value=""
+              placeholder="Who's the author"
+            /><br />
+            <label>Number of pages: </label><br />
+            <input
+              class="field"
+              type="number"
+              name="pages"
+              placeholder="No of pages"
+            /><br />
+            <input class="btn" type="submit" value="Submit" />
+          </form>
+          <form id="mybutton">
+            <input class="btn" type="submit" value="Add a new Book" />
+          </form>
+        </div>
+        <div class="container bookList">
+          <table style="width:100%">
+            <thead class="header">
+              <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>No.Pages</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+          </table>
+        </div>
       </div>
-    </form>
-    <form id="myFormButton">
-      <button id="newBookBtn">New Book</button>
-    </form>
-
-    <table id="myTable" style="width:50%">
-      <!-- <tr>
-        <th>Title</th>
-        <th>Author</th>
-        <th>No.Pages</th>
-        <th>Read?</th>
-      </tr> -->
-    </table>
+    </main>
+    <footer></footer>
+    <script src="http://wzrd.in/standalone/uuid%2Fv4@latest"></script>
     <script src="./asset/index.js"></script>
   </body>
 </html>
