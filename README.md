@@ -2,7 +2,7 @@
 
 To get the full details of the project go to [Odin Project](https://www.theodinproject.com/courses/javascript/lessons/library).
 
-While implementing this project, we worked with the following concepts.
+While implementing this project, we worked with the following JavaScript concepts.
 
 1. Creating function constructors
 2. Creating  object from a function Constructor.
