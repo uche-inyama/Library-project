@@ -5,6 +5,8 @@
     "prettier/prettier": "error",
     "no-unused-vars": "warn",
     "no-console": "off",
-    "func-names": "off"
+    "func-names": "off",
+    "implicit-arrow-linebreak": "off",
+    "space-before-function-paren": "on"
   }
 }

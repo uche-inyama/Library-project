@@ -20,7 +20,7 @@ function Book(title, author, numOfPages, status = unread, id = null) {
     return `${this.title} by ${this.author}, ${numOfPages} pages, not read yet`;
   };
 
-  this.changeStatus = function() {
+  this.changeStatus = function changeStatus() {
     this.status = this.status === read ? unread : read;
   };
 }
