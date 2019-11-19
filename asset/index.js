@@ -8,7 +8,6 @@ const form = document.querySelector('#myForm');
 const btn = form.querySelector('.btn');
 const myFormBtn = document.querySelector('#mybutton');
 const tbody = document.querySelector('#tbody');
-// const tableRow = tbody.querySelector('#tableRow');
 
 function Book(title, author, numOfPages, status = unread, id = null) {
   this.title = title;
@@ -87,7 +86,6 @@ myFormBtn.addEventListener('click', function(evt) {
 
 btn.addEventListener('click', function(evt) {
   evt.preventDefault();
-  console.log('You clicked me.');
   const title = form.querySelector('[name="title"]').value;
   const author = form.querySelector('[name="author"]').value;
   const pages = form.querySelector('[name="pages"]').value;
@@ -107,7 +105,7 @@ tbody.addEventListener('click', function(e) {
     render(template(), tbody);
   } else if (e.target.matches('.statusBtn')) {
     const library = getLibrary();
-    for (let i = library.length - 1; i > -1; i--) {
+    for (let i = library.length - 1; i > -1; i -= 1) {
       if (library[i].id !== id) continue;
       const book = Object.assign(new Book(), library[i]);
       book.changeStatus();
