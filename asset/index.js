@@ -92,7 +92,7 @@ btn.addEventListener('click', function(evt) {
   const book = new Book(title, author, pages);
 
   if (title || author || pages === '') {
-    alert('Please check a required field(s) is empty');
+    alert('Please check, a required field(s) are empty');
   } else {
     addBookToLibrary(book);
   }
