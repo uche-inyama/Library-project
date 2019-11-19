@@ -1,4 +1,5 @@
 /* global document */
+/* global window */
 
 const unread = 'Unread';
 const read = 'Read';
