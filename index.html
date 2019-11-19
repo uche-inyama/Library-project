@@ -33,7 +33,7 @@
     <main>
       <div class="wrapper container">
         <div class="form-container">
-          <form id="myForm">
+          <form id="myForm" method="post">
             <label>Title:</label><br />
             <input
               class="field"
@@ -41,6 +41,7 @@
               name="title"
               value=""
               placeholder="Enter the title"
+              required
             /><br />
             <label>Author:</label><br />
             <input
@@ -49,6 +50,7 @@
               name="author"
               value=""
               placeholder="Who's the author"
+              required
             /><br />
             <label>Number of pages: </label><br />
             <input
@@ -56,6 +58,7 @@
               type="number"
               name="pages"
               placeholder="No of pages"
+              required
             /><br />
             <input class="btn" type="submit" value="Submit" />
           </form>

@@ -90,11 +90,16 @@ btn.addEventListener('click', function(evt) {
   const author = form.querySelector('[name="author"]').value;
   const pages = form.querySelector('[name="pages"]').value;
   const book = new Book(title, author, pages);
-  addBookToLibrary(book);
+
+  if (title || author || pages === '') {
+    alert('Please check a required field(s) is empty');
+  } else {
+    addBookToLibrary(book);
+  }
+
   form.querySelector('[name="title"]').value = '';
   form.querySelector('[name="author"]').value = '';
   form.querySelector('[name="pages"]').value = '';
-
   render(template(), tbody);
 });
 
