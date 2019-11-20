@@ -25,7 +25,7 @@ function Book(title, author, numOfPages, status = unread, id = null) {
   };
 }
 
-Book.prototype.parseJson = function(obj) {
+Book.prototype.parseJson = function (obj) {
   const book = new Book(
     obj.title,
     obj.author,
@@ -78,20 +78,20 @@ const render = (tpl, node) => {
 
 form.hidden = true;
 
-myFormBtn.addEventListener('click', function(evt) {
+myFormBtn.addEventListener('click', function (evt) {
   evt.preventDefault();
   form.hidden = false;
   myFormBtn.hidden = true;
 });
 
-btn.addEventListener('click', function(evt) {
+btn.addEventListener('click', function (evt) {
   evt.preventDefault();
   const title = form.querySelector('[name="title"]').value;
   const author = form.querySelector('[name="author"]').value;
   const pages = form.querySelector('[name="pages"]').value;
   const book = new Book(title, author, pages);
 
-  if (!title || !author || !pages === '') {
+  if (!title || !author || !pages) {
     alert('Please check, a required field(s) are empty');
   } else {
     addBookToLibrary(book);
@@ -103,7 +103,7 @@ btn.addEventListener('click', function(evt) {
   render(template(), tbody);
 });
 
-tbody.addEventListener('click', function(e) {
+tbody.addEventListener('click', function (e) {
   const id = e.target.dataset.id;
   if (e.target.matches('.deleteBtn')) {
     removeBookFromLibrary(id);
