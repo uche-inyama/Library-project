@@ -91,7 +91,7 @@ btn.addEventListener('click', function(evt) {
   const pages = form.querySelector('[name="pages"]').value;
   const book = new Book(title, author, pages);
 
-  if (title || author || pages === '') {
+  if (!title || !author || !pages === '') {
     alert('Please check, a required field(s) are empty');
   } else {
     addBookToLibrary(book);
